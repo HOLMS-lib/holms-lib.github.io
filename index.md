@@ -193,5 +193,7 @@ Completness of GL
 COMPLETENESS_THEOREM 
  |- `!p. ITF:(form list->bool)#(form list->form list->bool)->bool |= p
        ==> [GL_AX . {} |~ p]`
+```
+
 
 ### Automated theorem proving and countermodel construction

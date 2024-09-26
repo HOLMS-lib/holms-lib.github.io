@@ -12,7 +12,7 @@ let MODPROVES_RULES,MODPROVES_INDUCT,MODPROVES_CASES =
    (!H p q. [S . H |~ p --> q] /\ [S . H |~ p] ==> [S . H |~ q]) /\
    (!H p. [S . {} |~ p] ==> [S . H |~ Box p])`;;
 ```
-Dedction Lemma:
+Deduction Lemma:
 ```
 let MODPROVES_DEDUCTION_LEMMA = prove
  (`!S H p q. [S . H |~ p --> q] <=> [S . p INSERT H |~ q]`,

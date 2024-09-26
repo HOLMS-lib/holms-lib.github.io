@@ -1,2 +1,2 @@
 # holms-lib.github.io
-Documentation website for HOLMS, a HOL-Light Library for Modal Systems.
+Documentation website for HOLMS, a HOL Light Library for Modal Systems.

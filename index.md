@@ -1,8 +1,10 @@
 # A HOL Light Library for Modal Systems
 
-To be done.
+This website gives a brief overview of our [HOLMS library](https://github.com/HOLMS-lib/HOLMS).
 
-Axiomatic Definition:
+## Principal definitions and theorems
+
+### Axiomatic Definition
 ```
 let MODPROVES_RULES,MODPROVES_INDUCT,MODPROVES_CASES =
   new_inductive_definition
@@ -12,7 +14,8 @@ let MODPROVES_RULES,MODPROVES_INDUCT,MODPROVES_CASES =
    (!H p q. [S . H |~ p --> q] /\ [S . H |~ p] ==> [S . H |~ q]) /\
    (!H p. [S . {} |~ p] ==> [S . H |~ Box p])`;;
 ```
-Deduction Lemma:
+
+### Deduction Lemma
 ```
 let MODPROVES_DEDUCTION_LEMMA = prove
  (`!S H p q. [S . H |~ p --> q] <=> [S . p INSERT H |~ q]`,
@@ -30,13 +33,11 @@ let MODPROVES_DEDUCTION_LEMMA = prove
   ASM_REWRITE_TAC[IN_INSERT]);;
 ```
 
+### Relational semantics
 
-Relational semantics
+Kripke's Semantics of formulae.
+
 ```
-(* ------------------------------------------------------------------------- *)
-(* Kripke's Semantics of formulae.                                           *)
-(* ------------------------------------------------------------------------- *)
-
 let holds =
   let pth = prove
     (`(!WP. P WP) <=> (!W R. P (W,R))`,
@@ -63,7 +64,7 @@ let valid = new_definition
   `L: (W->bool)#(W->W->bool)->bool |= p <=> !f. L f ==> holds_in f p`;;
 ```
 
-Soundness and consistency of GL
+### Soundness and consistency of GL
 ```
 let GL_consistent = prove
  (`~ [GL_AX . {} |~  False]`,
@@ -73,7 +74,8 @@ let GL_consistent = prove
   MAP_EVERY EXISTS_TAC [`{0}`; `\x:num y:num. F`] THEN
   REWRITE_TAC[NOT_INSERT_EMPTY; FINITE_SING; IN_SING] THEN MESON_TAC[]);;
 ```
-Soundness and consistency of K
+
+### Soundness and consistency of K
 ```
 g `~ [{} . {} |~ False]`;;
 e (REFUTE_THEN (MP_TAC o MATCH_MP (INST_TYPE [`:num`,`:W`] K_FRAME_VALID)));;

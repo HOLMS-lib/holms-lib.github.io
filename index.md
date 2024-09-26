@@ -194,6 +194,6 @@ COMPLETENESS_THEOREM
  |- `!p. ITF:(form list->bool)#(form list->form list->bool)->bool |= p
        ==> [GL_AX . {} |~ p]`
 ```
-
+### Finite model property and decidability
 
 ### Automated theorem proving and countermodel construction

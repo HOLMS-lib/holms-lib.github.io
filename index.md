@@ -1,4 +1,4 @@
-# HOLMS - A HOL Light Library for Modal Systems
+# A HOL Light Library for Modal Systems
 
 To be done.
 

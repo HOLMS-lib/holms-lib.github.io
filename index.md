@@ -1,6 +1,6 @@
 # A HOL Light Library for Modal Systems
 
-This website gives a brief overview of our [HOLMS library](https://github.com/HOLMS-lib/HOLMS).
+This website gives a brief overview of our [HOLMS library](https://github.com/HOLMS-lib/HOLMS) for the [HOL Light](https://hol-light.github.io/) theorem prover.
 
 ## Principal definitions and theorems
 

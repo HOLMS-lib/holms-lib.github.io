@@ -58,10 +58,8 @@ let holds =
 let holds_in = new_definition
   `holds_in (W,R) p <=> !V w. w IN W ==> holds (W,R) V p w`;;
 
-parse_as_infix("|=",(11,"right"));;
-
 let valid = new_definition
-  `L:(W->bool)#(W->W->bool)->bool |= p <=> !f. L f ==> holds_in f p`;;
+  `L |= p <=> !f. L f ==> holds_in f p`;;
 ```
 
 ### Soundness and consistency of GL
@@ -116,9 +114,9 @@ let K_STANDARD_MODEL = new_definition
 Definitions in GL
 ```
 let ITF = new_definition
-  `ITF (W:W->bool,R:W->W->bool) <=>
+  `ITF <=>
    ~(W = {}) /\
-   (!x y:W. R x y ==> x IN W /\ y IN W) /\
+   (!x y. R x y ==> x IN W /\ y IN W) /\
    FINITE W /\
    (!x. x IN W ==> ~R x x) /\
    (!x y z. x IN W /\ y IN W /\ z IN W /\ R x y /\ R y z ==> R x z)`;;
@@ -195,15 +193,13 @@ GEN_TRUTH_LEMMA
 Completeness of K
 ```
 K_COMPLETENESS_THM
-|- !p. K_FRAME:(form list->bool)#(form list->form list->bool)->bool |= p
-       ==> [{} . {} |~ p]
+|- !p. K_FRAME |= p ==> [{} . {} |~ p]
 ```
 
 Completeness of GL
 ```
 COMPLETENESS_THEOREM 
-|- !p. ITF:(form list->bool)#(form list->form list->bool)->bool |= p
-       ==> [GL_AX . {} |~ p]
+|- !p. ITF |= p ==> [GL_AX . {} |~ p]
 ```
 
 ### Finite model property and decidability

@@ -30,7 +30,7 @@ let MODPROVES_RULES,MODPROVES_INDUCT,MODPROVES_CASES =
 ### Deduction Lemma
 ```
 MODPROVES_DEDUCTION_LEMMA
-|- `!S H p q. [S . H |~ p --> q] <=> [S . p INSERT H |~ q]`
+|- !S H p q. [S . H |~ p --> q] <=> [S . p INSERT H |~ q]
 ```
 
 ### Relational semantics
@@ -61,18 +61,18 @@ let holds_in = new_definition
 parse_as_infix("|=",(11,"right"));;
 
 let valid = new_definition
-  `L: (W->bool)#(W->W->bool)->bool |= p <=> !f. L f ==> holds_in f p`;;
+  `L:(W->bool)#(W->W->bool)->bool |= p <=> !f. L f ==> holds_in f p`;;
 ```
 
 ### Soundness and consistency of GL
 ```
 GL_consistent 
- |- `~ [GL_AX . {} |~  False]`
+|- ~ [GL_AX . {} |~  False]
 ```
 ### Soundness and consistency of K
 ```
 K_CONSISTENT
- |- `~ [{} . {} |~ False]`
+|- ~ [{} . {} |~ False]
 ```
 
 ### Completeness theorem
@@ -102,16 +102,15 @@ let GEN_STANDARD_MODEL = new_definition
 Definitions in K
 ```
 let K_FRAME = new_definition
- `K_FRAME (W,R) <=> 
-  FRAME(W,R) /\ FINITE W`;;
+  `K_FRAME (W,R) <=> FRAME(W,R) /\ FINITE W`;;
 
 let K_STANDARD_FRAME = new_definition
- `K_STANDARD_FRAME p (W,R) <=>
-  GEN_STANDARD_FRAME K_FRAME {} p (W,R)`;;
+  `K_STANDARD_FRAME p (W,R) <=>
+   GEN_STANDARD_FRAME K_FRAME {} p (W,R)`;;
 
 let K_STANDARD_MODEL = new_definition
-   `K_STANDARD_MODEL p (W,R) V <=>
-    GEN_STANDARD_MODEL K_FRAME {} p (W,R) V`;;
+  `K_STANDARD_MODEL p (W,R) V <=>
+   GEN_STANDARD_MODEL K_FRAME {} p (W,R) V`;;
 ```
 
 Definitions in GL
@@ -170,7 +169,7 @@ let GL_STANDARD_REL = new_definition
    (?E. MEM (Box E) x /\ MEM (Not (Box E)) w)`;;
 
 ACCESSIBILITY_LEMMA
- |- `!p M w q.
+|- !p M w q.
      ~ [GL_AX . {} |~ p] /\
      MAXIMAL_CONSISTENT GL_AX p M /\
      (!q. MEM q M ==> q SUBSENTENCE p) /\
@@ -179,32 +178,32 @@ ACCESSIBILITY_LEMMA
      MEM (Not p) M /\
      Box q SUBFORMULA p /\
      (!x. GL_STANDARD_REL p w x ==> MEM q x)
-     ==> MEM (Box q) w`
+     ==> MEM (Box q) w
 ```
 
 #### STEP 3
 Parametric truth lemma.
 ```
 GEN_TRUTH_LEMMA
- |- `!K S W R p V q.
+|- !K S W R p V q.
      ~ [S . {} |~ p] /\
      GEN_STANDARD_MODEL K S p (W,R) V /\
      q SUBFORMULA p
-     ==> !w. w IN W ==> (MEM q w <=> holds (W,R) V q w)`
+     ==> !w. w IN W ==> (MEM q w <=> holds (W,R) V q w)
 ```
 
 Completeness of K
 ```
 K_COMPLETENESS_THM
- |- `!p. K_FRAME:(form list->bool)#(form list->form list->bool)->bool |= p
-       ==> [{} . {} |~ p]`
+|- !p. K_FRAME:(form list->bool)#(form list->form list->bool)->bool |= p
+       ==> [{} . {} |~ p]
 ```
 
 Completeness of GL
 ```
 COMPLETENESS_THEOREM 
- |- `!p. ITF:(form list->bool)#(form list->form list->bool)->bool |= p
-       ==> [GL_AX . {} |~ p]`
+|- !p. ITF:(form list->bool)#(form list->form list->bool)->bool |= p
+       ==> [GL_AX . {} |~ p]
 ```
 
 ### Finite model property and decidability

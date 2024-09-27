@@ -76,7 +76,10 @@ K_CONSISTENT
 ```
 
 ### Completeness theorem
-#### STEP 1.
+
+The proof is organized in three steps.
+
+#### STEP 1
 Identification of a non-empty set of possible worlds, given by a subclass of maximal consistent sets of formulas.
 
 Parametric Definitions
@@ -130,9 +133,7 @@ let GL_STANDARD_MODEL = new_definition
     GEN_STANDARD_MODEL ITF GL_AX p (W,R) V`;;
 ```
 
-
-
-#### STEP 2.
+#### STEP 2
 Definition of a “standard” accessibility relation depending on axiom set S between these worlds such that the frame is appropriate to S.
 
 Parametric definition of the standard relation
@@ -181,8 +182,7 @@ ACCESSIBILITY_LEMMA
      ==> MEM (Box q) w`
 ```
 
-
-#### STEP 3.
+#### STEP 3
 Parametric truth lemma.
 ```
 GEN_TRUTH_LEMMA
@@ -193,19 +193,20 @@ GEN_TRUTH_LEMMA
      ==> !w. w IN W ==> (MEM q w <=> holds (W,R) V q w)`
 ```
 
-Completness of K
+Completeness of K
 ```
 K_COMPLETENESS_THM
  |- `!p. K_FRAME:(form list->bool)#(form list->form list->bool)->bool |= p
        ==> [{} . {} |~ p]`
 ```
 
-Completness of GL
+Completeness of GL
 ```
 COMPLETENESS_THEOREM 
  |- `!p. ITF:(form list->bool)#(form list->form list->bool)->bool |= p
        ==> [GL_AX . {} |~ p]`
 ```
+
 ### Finite model property and decidability
 
 ### Automated theorem proving and countermodel construction

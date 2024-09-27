@@ -2,6 +2,11 @@
 
 This website gives a brief overview of our [HOLMS library](https://github.com/HOLMS-lib/HOLMS) for the [HOL Light](https://hol-light.github.io/) theorem prover.
 
+## Publications
+
+- Marco Maggesi, Cosimo Perini Brogi (2023) *Mechanising Gödel–Löb Provability Logic in HOL Light*. J Autom Reasoning 67, 29. https://doi.org/10.1007/s10817-023-09677-z  (Open access)
+- Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi, Leonardo Quartini (2024) *Growing HOLMS, a HOL Light Library for Modal Systems*.  (In preparation)
+
 ## Contributors
 
 - Antonella Bilotta, University of Florence, Italy

@@ -204,6 +204,45 @@ COMPLETENESS_THEOREM
 
 ### Finite model property and decidability
 
+#### In K
+Construction of the countermodels.
+```
+let K_STDWORLDS_RULES,K_STDWORLDS_INDUCT,K_STDWORLDS_CASES =
+  new_inductive_set
+  `!M. MAXIMAL_CONSISTENT {} p M /\
+       (!q. MEM q M ==> q SUBSENTENCE p)
+       ==> set_of_list M IN K_STDWORLDS p`;;
+
+let K_STDREL_RULES,K_STDREL_INDUCT,K_STDREL_CASES = new_inductive_definition
+  `!w1 w2. K_STANDARD_REL p w1 w2
+           ==> K_STDREL p (set_of_list w1) (set_of_list w2)`;;
+```
+
+Theorem of existence of the finite countermodel.
+```
+GL_COUNTERMODEL_FINITE_SETS
+|- !p. ~[{} . {} |~ p] ==> ~holds_in (K_STDWORLDS p, K_STDREL p) p
+
+#### In GL
+Construction of the countermodels.
+```
+let GL_STDWORLDS_RULES,GL_STDWORLDS_INDUCT,GL_STDWORLDS_CASES =
+  new_inductive_set
+  `!M. MAXIMAL_CONSISTENT GL_AX p M /\
+       (!q. MEM q M ==> q SUBSENTENCE p)
+       ==> set_of_list M IN GL_STDWORLDS p`;;
+
+let GL_STDREL_RULES,GL_STDREL_INDUCT,GL_STDREL_CASES = new_inductive_definition
+  `!w1 w2. GL_STANDARD_REL p w1 w2
+           ==> GL_STDREL p (set_of_list w1) (set_of_list w2)`;;
+```
+
+Theorem of existence of the finite countermodel.
+```
+GL_COUNTERMODEL_FINITE_SETS
+|- !p. ~ [GL_AX . {} |~ p] ==> ~holds_in (GL_STDWORLDS p, GL_STDREL p) p
+```
+
 ### Automated theorem proving and countermodel construction
 
 #### In K

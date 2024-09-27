@@ -205,3 +205,76 @@ COMPLETENESS_THEOREM
 ### Finite model property and decidability
 
 ### Automated theorem proving and countermodel construction
+
+#### In K
+
+Our tactic `K_TAC` and its associated rule `K_RULE` can automatically prove theorems in the modal logic K.
+
+Examples:
+```
+K_RULE `!a b. [{} . {} |~ Box (a && b) <-> Box a && Box b]`;;
+
+K_RULE `!a b. [{} . {} |~ Box a || Box b --> Box (a || b)]`;;
+```
+
+#### In GL
+
+Our tactic `GL_TAC` and its associated rule `GL_RULE` can automatically prove theorems in the modal logic GL.
+Here is a list of examples
+
+#### Example of a formula valid in GL but not in K
+```
+time GL_RULE
+  `!a. [GL_AX . {} |~ Box Diam Box Diam a <-> Box Diam a]`;;
+```
+
+#### Formalised Second Incompleteness Theorem
+In PA, the following is provable: If PA is consistent, it cannot prove its own consistency.
+```
+let GL_second_incompleteness_theorem = GL_RULE
+  `[GL_AX . {} |~ Not (Box False) --> Not (Box (Diam True))]`;;
+```
+
+#### PA ignores unprovability statements
+```
+let GL_PA_ignorance = time GL_RULE
+  `!p. [GL_AX . {} |~ (Box False) <-> Box (Diam p)]`;;
+```
+
+#### PA undecidability of consistency
+If PA does not prove its inconsistency, then its consistency is undecidable.
+```
+let GL_PA_undecidability_of_consistency = time GL_RULE
+  `[GL_AX . {} |~ Not (Box (Box False))
+                  --> Not (Box (Not (Box False))) &&
+                      Not (Box (Not (Not (Box False))))]`;;
+```
+#### Undecidability of Godels formula
+```
+let GL_undecidability_of_Godels_formula = time GL_RULE
+  `!p. [GL_AX . {} |~ Box (p <-> Not (Box p)) && Not (Box (Box False))
+                      --> Not (Box p) && Not (Box (Not p))]`;;
+```
+
+#### Reflection and iterated consistency
+If a reflection principle implies the second iterated consistency assertion, then the converse implication holds too.
+```
+let GL_reflection_and_iterated_consistency = time GL_RULE
+  `!p. [GL_AX . {} |~ Box ((Box p --> p) --> Diam (Diam True))
+                      --> (Diam (Diam True) --> (Box p --> p))]`;;
+```
+
+#### A Godel sentence is equiconsistent with a consistency statement
+```
+let GL_Godel_sentence_equiconsistent_consistency = time GL_RULE
+  `!p. [GL_AX . {} |~ Box (p <-> Not (Box p)) <->
+                      Box (p <-> Not (Box False))]`;;
+```
+
+#### Arithmetical fixpoint
+For any arithmetical senteces p q, p is equivalent to unprovability of q --> p iff p is equivalent to consistency of q.
+```
+let GL_arithmetical_fixpoint = time GL_RULE
+  `!p q. [GL_AX . {} |~ Dotbox (p <-> Not (Box (q --> p))) <->
+                        Dotbox (p <-> Diam q)]`;;
+```

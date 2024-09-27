@@ -222,6 +222,7 @@ Theorem of existence of the finite countermodel.
 ```
 GL_COUNTERMODEL_FINITE_SETS
 |- !p. ~[{} . {} |~ p] ==> ~holds_in (K_STDWORLDS p, K_STDREL p) p
+```
 
 #### In GL
 Construction of the countermodels.
@@ -288,7 +289,7 @@ let GL_PA_undecidability_of_consistency = time GL_RULE
                   --> Not (Box (Not (Box False))) &&
                       Not (Box (Not (Not (Box False))))]`;;
 ```
-#### Undecidability of Godels formula
+#### Undecidability of Gödels formula
 ```
 let GL_undecidability_of_Godels_formula = time GL_RULE
   `!p. [GL_AX . {} |~ Box (p <-> Not (Box p)) && Not (Box (Box False))
@@ -311,7 +312,7 @@ let GL_Godel_sentence_equiconsistent_consistency = time GL_RULE
 ```
 
 #### Arithmetical fixpoint
-For any arithmetical senteces p q, p is equivalent to unprovability of q --> p iff p is equivalent to consistency of q.
+For any arithmetical sentences p q, p is equivalent to unprovability of q --> p iff p is equivalent to consistency of q.
 ```
 let GL_arithmetical_fixpoint = time GL_RULE
   `!p q. [GL_AX . {} |~ Dotbox (p <-> Not (Box (q --> p))) <->

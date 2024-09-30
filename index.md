@@ -9,10 +9,10 @@ This website gives a brief overview of our [HOLMS library](https://github.com/HO
   In 12th International Conference on Interactive Theorem Proving (ITP 2021).<br/>
   Leibniz International Proceedings in Informatics (LIPIcs),<br/>
   Volume 193, pp. 26:1-26:18, Schloss Dagstuhl – Leibniz-Zentrum für Informatik (2021)<br/>
-  DOI:[https://doi.org/10.4230/LIPIcs.ITP.2021.26](10.4230/LIPIcs.ITP.2021.26) (Open access)
+  DOI:[10.4230/LIPIcs.ITP.2021.26](https://doi.org/10.4230/LIPIcs.ITP.2021.26) (Open access)
 - Marco Maggesi, Cosimo Perini Brogi (2023)<br/>
   ***Mechanising Gödel–Löb Provability Logic in HOL Light***.<br/>
-  J Autom Reasoning 67, 29. DOI:[https://doi.org/10.1007/s10817-023-09677-z](10.1007/s10817-023-09677-z) (Open access)
+  J Autom Reasoning 67, 29. DOI:[10.1007/s10817-023-09677-z](https://doi.org/10.1007/s10817-023-09677-z) (Open access)
 - Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi, Leonardo Quartini (2024)<br/>
   ***Growing HOLMS, a HOL Light Library for Modal Systems***.<br/>
   (In preparation)

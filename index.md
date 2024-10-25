@@ -24,6 +24,7 @@ This website gives a brief overview of our [HOLMS library](https://github.com/HO
 - [Cosimo Perini Brogi](https://logicosimo-gitlab-io-logicosimo-ad8371f8e99a5e895c64ff5b4f9ba89.gitlab.io/), IMT School for Advanced Studies Lucca, Italy
 - Leonardo Quartini, University of Florence, Italy
 
+
 ## Principal definitions and theorems
 
 ### Axiomatic Definition
@@ -50,7 +51,7 @@ Kripke's Semantics of formulae.
 ```
 let holds =
   let pth = prove
-    (`(!WP. P WP) <=> (!W R. P (W,R))`,
+    (`(!WP. P WP) <=> (!W:W->bool R:W->W->bool. P (W,R))`,
      MATCH_ACCEPT_TAC FORALL_PAIR_THM) in
   (end_itlist CONJ o map (REWRITE_RULE[pth] o GEN_ALL) o CONJUNCTS o
    new_recursive_definition form_RECURSION)
@@ -66,21 +67,22 @@ let holds =
     !w'. w' IN FST WR /\ SND WR w w' ==> holds WR V p w')`;;
 
 let holds_in = new_definition
-  `holds_in (W,R) p <=> !V w. w IN W ==> holds (W,R) V p w`;;
+  `holds_in (W,R) p <=> !V w:W. w IN W ==> holds (W,R) V p w`;;
 
 let valid = new_definition
-  `L |= p <=> !f. L f ==> holds_in f p`;;
+  `L |= p <=> !f:(W->bool)#(W->W->bool). f IN L ==> holds_in f p`;;
+```
+
+### Soundness and consistency of K
+```
+K_CONSISTENT
+|- ~ [{} . {} |~ False]
 ```
 
 ### Soundness and consistency of GL
 ```
 GL_consistent 
 |- ~ [GL_AX . {} |~  False]
-```
-### Soundness and consistency of K
-```
-K_CONSISTENT
-|- ~ [{} . {} |~ False]
 ```
 
 ### Completeness theorem
@@ -90,60 +92,87 @@ The proof is organized in three steps.
 #### STEP 1
 Identification of a non-empty set of possible worlds, given by a subclass of maximal consistent sets of formulas.
 
-Parametric Definitions
+Parametric Definitions in gen_completness.ml
 ```
-let GEN_STANDARD_FRAME = new_definition
-  `GEN_STANDARD_FRAME K S p (W,R) <=>
-   W = {w | MAXIMAL_CONSISTENT S p w /\
-            (!q. MEM q w ==> q SUBSENTENCE p)} /\
-   K (W,R)  /\
-   (!q w. Box q SUBFORMULA p /\ w IN W
-          ==> (MEM (Box q) w <=> !x. R w x ==> MEM q x)) /\
-   (K (W,R) ==> FRAME(W,R))`;;
+let FRAME_DEF = new_definition
+  `FRAME = {(W:W->bool,R:W->W->bool) | ~(W = {}) /\
+                                       (!x y:W. R x y ==> x IN W /\ y IN W)}`;;
 
-let GEN_STANDARD_MODEL = new_definition
-  `GEN_STANDARD_MODEL K S p (W,R) V <=>
-   GEN_STANDARD_FRAME K S p (W,R) /\
+let GEN_STANDARD_FRAME_DEF = new_definition
+  `GEN_STANDARD_FRAME P S p =
+   FRAME INTER P INTER
+   {(W,R) | W = {w | MAXIMAL_CONSISTENT S p w /\
+            (!q. MEM q w ==> q SUBSENTENCE p)} /\
+            (!q w. Box q SUBFORMULA p /\ w IN W
+                   ==> (MEM (Box q) w <=> !x. R w x ==> MEM q x))}`;;
+
+let GEN_STANDARD_MODEL_DEF = new_definition
+  `GEN_STANDARD_MODEL P S p (W,R) V <=>
+   (W,R) IN GEN_STANDARD_FRAME P S p /\
    (!a w. w IN W ==> (V a w <=> MEM (Atom a) w /\ Atom a SUBFORMULA p))`;;
 ```
 
-Definitions in K
+Definitions in k_completness.ml
 ```
-let K_FRAME = new_definition
-  `K_FRAME (W,R) <=> FRAME(W,R) /\ FINITE W`;;
+let K_FRAME_DEF = new_definition
+  `K_FRAME = {(W:W->bool,R) | (W,R) IN FRAME /\ FINITE W}`;;
 
-let K_STANDARD_FRAME = new_definition
-  `K_STANDARD_FRAME p (W,R) <=>
-   GEN_STANDARD_FRAME K_FRAME {} p (W,R)`;;
+let K_STANDARD_FRAME_DEF = new_definition
+  `K_STANDARD_FRAME = GEN_STANDARD_FRAME K_FRAME {}`;;
 
-let K_STANDARD_MODEL = new_definition
-  `K_STANDARD_MODEL p (W,R) V <=>
-   GEN_STANDARD_MODEL K_FRAME {} p (W,R) V`;;
+IN_K_STANDARD_FRAME
+|- `(W,R) IN K_STANDARD_FRAME p <=>
+   W = {w | MAXIMAL_CONSISTENT {} p w /\
+            (!q. MEM q w ==> q SUBSENTENCE p)} /\
+   (W,R) IN K_FRAME /\
+   (!q w. Box q SUBFORMULA p /\ w IN W
+          ==> (MEM (Box q) w <=> !x. R w x ==> MEM q x))`
+
+let K_STANDARD_MODEL_DEF = new_definition
+   `K_STANDARD_MODEL = GEN_STANDARD_MODEL K_FRAME {}`;;
+
+K_STANDARD_MODEL_CAR
+|- `K_STANDARD_MODEL p (W,R) V <=>
+   (W,R) IN K_STANDARD_FRAME p /\
+   (!a w. w IN W ==> (V a w <=> MEM (Atom a) w /\ Atom a SUBFORMULA p))`
 ```
 
-Definitions in GL
+Definitions in gl_completness.ml
 ```
-let ITF = new_definition
-  `ITF <=>
-   ~(W = {}) /\
-   (!x y. R x y ==> x IN W /\ y IN W) /\
-   FINITE W /\
-   (!x. x IN W ==> ~R x x) /\
-   (!x y z. x IN W /\ y IN W /\ z IN W /\ R x y /\ R y z ==> R x z)`;;
+let ITF_DEF = new_definition
+  `ITF =
+   {(W:W->bool,R:W->W->bool) |
+    ~(W = {}) /\
+    (!x y:W. R x y ==> x IN W /\ y IN W) /\
+    FINITE W /\
+    (!x. x IN W ==> ~R x x) /\
+    (!x y z. x IN W /\ y IN W /\ z IN W /\ R x y /\ R y z ==> R x z)}`;;
 
-let GL_STANDARD_FRAME = new_definition
-  `GL_STANDARD_FRAME p (W,R) <=>
-   GEN_STANDARD_FRAME ITF GL_AX p (W,R)`;;
+let GL_STANDARD_FRAME_DEF = new_definition
+  `GL_STANDARD_FRAME p = GEN_STANDARD_FRAME ITF GL_AX p`;;
 
-let GL_STANDARD_MODEL = new_definition
-   `GL_STANDARD_MODEL p (W,R) V <=>
-    GEN_STANDARD_MODEL ITF GL_AX p (W,R) V`;;
+IN_GL_STANDARD_FRAME
+|- `!p W R. (W,R) IN GL_STANDARD_FRAME p <=>
+           W = {w | MAXIMAL_CONSISTENT GL_AX p w /\
+                    (!q. MEM q w ==> q SUBSENTENCE p)} /\
+           (W,R) IN ITF /\
+           (!q w. Box q SUBFORMULA p /\ w IN W
+                  ==> (MEM (Box q) w <=> !x. R w x ==> MEM q x))`
+
+let GL_STANDARD_MODEL_DEF = new_definition
+   `GL_STANDARD_MODEL = GEN_STANDARD_MODEL ITF GL_AX`;;
+
+GL_STANDARD_MODEL_CAR
+|- `!W R p V.
+     GL_STANDARD_MODEL p (W,R) V <=>
+     (W,R) IN GL_STANDARD_FRAME p /\
+     (!a w. w IN W ==> (V a w <=> MEM (Atom a) w /\ Atom a SUBFORMULA p)) `
 ```
 
 #### STEP 2
 Definition of a “standard” accessibility relation depending on axiom set S between these worlds such that the frame is appropriate to S.
 
-Parametric definition of the standard relation
+Parametric definition of the standard relation in gen_completness.ml
 ```
 let GEN_STANDARD_REL = new_definition
   `GEN_STANDARD_REL S p w x <=>
@@ -152,11 +181,16 @@ let GEN_STANDARD_REL = new_definition
    (!B. MEM (Box B) w ==> MEM B x)`;;
 ```
 
-In K
+In k_completness.ml
 ```
 let K_STANDARD_REL_DEF = new_definition
-  `K_STANDARD_REL p w x <=> GEN_STANDARD_REL {} p w x`;;
+  `K_STANDARD_REL p = GEN_STANDARD_REL {} p`;;
 
+K_STANDARD_REL_CAR
+|-`K_STANDARD_REL p w x <=>
+   MAXIMAL_CONSISTENT {} p w /\ (!q. MEM q w ==> q SUBSENTENCE p) /\
+   MAXIMAL_CONSISTENT {} p x /\ (!q. MEM q x ==> q SUBSENTENCE p) /\
+   (!B. MEM (Box B) w ==> MEM B x)`
 
 K_ACCESSIBILITY_LEMMA_1
  |- `!p w q.
@@ -170,14 +204,14 @@ K_ACCESSIBILITY_LEMMA_1
 
 In GL
 ```
-let GL_STANDARD_REL = new_definition
+let GL_STANDARD_REL_DEF = new_definition
   `GL_STANDARD_REL p w x <=>
    GEN_STANDARD_REL GL_AX p w x /\
    (!B. MEM (Box B) w ==> MEM (Box B) x) /\
    (?E. MEM (Box E) x /\ MEM (Not (Box E)) w)`;;
 
-ACCESSIBILITY_LEMMA
-|- !p M w q.
+GL_ACCESSIBILITY_LEMMA
+|- `!p M w q.
      ~ [GL_AX . {} |~ p] /\
      MAXIMAL_CONSISTENT GL_AX p M /\
      (!q. MEM q M ==> q SUBSENTENCE p) /\
@@ -186,30 +220,32 @@ ACCESSIBILITY_LEMMA
      MEM (Not p) M /\
      Box q SUBFORMULA p /\
      (!x. GL_STANDARD_REL p w x ==> MEM q x)
-     ==> MEM (Box q) w
+     ==> MEM (Box q) w`
 ```
 
 #### STEP 3
-Parametric truth lemma.
+Parametric truth lemma in gen_completness.ml
 ```
 GEN_TRUTH_LEMMA
-|- !K S W R p V q.
+|- `!P S W R p V q.
      ~ [S . {} |~ p] /\
-     GEN_STANDARD_MODEL K S p (W,R) V /\
+     GEN_STANDARD_MODEL P S p (W,R) V /\
      q SUBFORMULA p
-     ==> !w. w IN W ==> (MEM q w <=> holds (W,R) V q w)
+     ==> !w. w IN W ==> (MEM q w <=> holds (W,R) V q w)`
 ```
 
-Completeness of K
+Completeness of K in k_completness.ml
 ```
 K_COMPLETENESS_THM
-|- !p. K_FRAME |= p ==> [{} . {} |~ p]
+|- `!p. K_FRAME:(form list->bool)#(form list->form list->bool)->bool |= p
+       ==> [{} . {} |~ p]`
 ```
 
-Completeness of GL
+Completeness of GL in gl_completness.ml
 ```
 COMPLETENESS_THEOREM 
-|- !p. ITF |= p ==> [GL_AX . {} |~ p]
+|- `!p. ITF:(form list->bool)#(form list->form list->bool)->bool |= p
+       ==> [GL_AX . {} |~ p]`
 ```
 
 ### Finite model property and decidability
@@ -230,8 +266,8 @@ let K_STDREL_RULES,K_STDREL_INDUCT,K_STDREL_CASES = new_inductive_definition
 
 Theorem of existence of the finite countermodel.
 ```
-GL_COUNTERMODEL_FINITE_SETS
-|- !p. ~[{} . {} |~ p] ==> ~holds_in (K_STDWORLDS p, K_STDREL p) p
+k_COUNTERMODEL_FINITE_SETS
+|- `!p. ~[{} . {} |~ p] ==> ~holds_in (K_STDWORLDS p, K_STDREL p) p`
 ```
 
 #### In GL
@@ -251,7 +287,7 @@ let GL_STDREL_RULES,GL_STDREL_INDUCT,GL_STDREL_CASES = new_inductive_definition
 Theorem of existence of the finite countermodel.
 ```
 GL_COUNTERMODEL_FINITE_SETS
-|- !p. ~ [GL_AX . {} |~ p] ==> ~holds_in (GL_STDWORLDS p, GL_STDREL p) p
+|- `!p. ~ [GL_AX . {} |~ p] ==> ~holds_in (GL_STDWORLDS p, GL_STDREL p) p`
 ```
 
 ### Automated theorem proving and countermodel construction
@@ -281,7 +317,7 @@ time GL_RULE
 #### Formalised Second Incompleteness Theorem
 In PA, the following is provable: If PA is consistent, it cannot prove its own consistency.
 ```
-let GL_second_incompleteness_theorem = GL_RULE
+let GL_second_incompleteness_theorem = time GL_RULE
   `[GL_AX . {} |~ Not (Box False) --> Not (Box (Diam True))]`;;
 ```
 

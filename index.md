@@ -41,7 +41,7 @@ let MODPROVES_RULES,MODPROVES_INDUCT,MODPROVES_CASES =
 ### Deduction Lemma
 ```
 MODPROVES_DEDUCTION_LEMMA
-|- !S H p q. [S . H |~ p --> q] <=> [S . p INSERT H |~ q]
+|- `!S H p q. [S . H |~ p --> q] <=> [S . p INSERT H |~ q]`
 ```
 
 ### Relational semantics
@@ -76,23 +76,25 @@ let valid = new_definition
 ### Soundness and consistency of K
 ```
 K_CONSISTENT
-|- ~ [{} . {} |~ False]
+|- `~ [{} . {} |~ False]`
 ```
 
 ### Soundness and consistency of GL
 ```
 GL_consistent 
-|- ~ [GL_AX . {} |~  False]
+|- `~ [GL_AX . {} |~  False]`
 ```
 
 ### Completeness theorem
 
 The proof is organized in three steps.
+We can observe that, by working with HOL, it is possible to identify all those lines of reasoning that are _parametric_ for P (the specific propriety of each frame of a logic) and S (the set of axioms of the logic) 
+and develop each of of the three steps while avoiding code duplication as much as possible. In particular  the step 3 is already fully formalised in HOLMS with the `GEN_TRUTH_LEMMA`.
 
 #### STEP 1
-Identification of a non-empty set of possible worlds, given by a subclass of maximal consistent sets of formulas.
+Identification of a model <W,R,V> depending on a formula p and, in particular, of a non-empty set of possible worlds given by a subclass of maximal consistent sets of formulas.
 
-Parametric Definitions in gen_completness.ml
+Parametric Definitions in `gen_completness.ml` (parameters P, S)
 ```
 let FRAME_DEF = new_definition
   `FRAME = {(W:W->bool,R:W->W->bool) | ~(W = {}) /\
@@ -112,7 +114,7 @@ let GEN_STANDARD_MODEL_DEF = new_definition
    (!a w. w IN W ==> (V a w <=> MEM (Atom a) w /\ Atom a SUBFORMULA p))`;;
 ```
 
-Definitions in k_completness.ml
+Definitions in `k_completness.ml` (P=K_FRAME, S={})
 ```
 let K_FRAME_DEF = new_definition
   `K_FRAME = {(W:W->bool,R) | (W,R) IN FRAME /\ FINITE W}`;;
@@ -137,7 +139,7 @@ K_STANDARD_MODEL_CAR
    (!a w. w IN W ==> (V a w <=> MEM (Atom a) w /\ Atom a SUBFORMULA p))`
 ```
 
-Definitions in gl_completness.ml
+Definitions in `gl_completness.ml` (P=ITF, S=GL_AX)
 ```
 let ITF_DEF = new_definition
   `ITF =
@@ -172,7 +174,7 @@ GL_STANDARD_MODEL_CAR
 #### STEP 2
 Definition of a “standard” accessibility relation depending on axiom set S between these worlds such that the frame is appropriate to S.
 
-Parametric definition of the standard relation in gen_completness.ml
+Parametric definition of the standard relation in `gen_completness.ml` (parameter S)
 ```
 let GEN_STANDARD_REL = new_definition
   `GEN_STANDARD_REL S p w x <=>
@@ -181,7 +183,7 @@ let GEN_STANDARD_REL = new_definition
    (!B. MEM (Box B) w ==> MEM B x)`;;
 ```
 
-In k_completness.ml
+Definitions in `k_completness.ml` (S={}) and demonstration of the Accessibility Lemma for K.
 ```
 let K_STANDARD_REL_DEF = new_definition
   `K_STANDARD_REL p = GEN_STANDARD_REL {} p`;;
@@ -202,7 +204,7 @@ K_ACCESSIBILITY_LEMMA_1
     ==> MEM (Box q) w`
 ```
 
-In GL
+Definitions in `gl_completness.ml` (S=GL_AX) and demonstration of the Accessibility Lemma for GL.
 ```
 let GL_STANDARD_REL_DEF = new_definition
   `GL_STANDARD_REL p w x <=>
@@ -224,7 +226,10 @@ GL_ACCESSIBILITY_LEMMA
 ```
 
 #### STEP 3
-Parametric truth lemma in gen_completness.ml
+The reduction of the notion of forcing `holds (W,R) V q w` to that of a set-theoretic (list-theoretic) membership MEM q w 
+for every subformula q of p, through a specific atomic evaluation function on (W,R).
+
+Parametric truth lemma in `gen_completness.ml` (parameters P, S)
 ```
 GEN_TRUTH_LEMMA
 |- `!P S W R p V q.
@@ -233,20 +238,47 @@ GEN_TRUTH_LEMMA
      q SUBFORMULA p
      ==> !w. w IN W ==> (MEM q w <=> holds (W,R) V q w)`
 ```
+Truth lemma specified for K in `k_completness.ml` (P=K_FRAME, S={})
+```
+let K_TRUTH_LEMMA = prove
+(`!W R p V q.
+    ~ [{} . {} |~ p] /\
+    K_STANDARD_MODEL p (W,R) V /\
+    q SUBFORMULA p
+    ==> !w. w IN W ==> (MEM q w <=> holds (W,R) V q w)`,
+  REWRITE_TAC[K_STANDARD_MODEL_DEF] THEN MESON_TAC[GEN_TRUTH_LEMMA]);;
 
-Completeness of K in k_completness.ml
+```
+Truth lemma specified for GL in `gl_completness.ml` (P=ITF, S=GL_AX)
+```
+let GL_truth_lemma = prove
+ (`!W R p V q.
+     ~ [GL_AX . {} |~ p] /\
+     GL_STANDARD_MODEL p (W,R) V /\
+     q SUBFORMULA p
+     ==> !w. w IN W ==> (MEM q w <=> holds (W,R) V q w)`,
+  REWRITE_TAC[GL_STANDARD_MODEL_DEF] THEN MESON_TAC[GEN_TRUTH_LEMMA]);;
+
+```
+
+#### The Theorem
+
+Completeness of K in `k_completness.ml`.
+This demonstration uses the `K_TRUTH_LEMMA` that specifies the `GEN_TRUTH_LEMMA`, therefore the first part of the demonstration of the completness theorem for K is completely parametrized.
 ```
 K_COMPLETENESS_THM
 |- `!p. K_FRAME:(form list->bool)#(form list->form list->bool)->bool |= p
        ==> [{} . {} |~ p]`
 ```
 
-Completeness of GL in gl_completness.ml
+Completeness of GL in `gl_completness.ml`  
+This demonstration uses the `GL_TRUTH_LEMMA` that specifies the `GEN_TRUTH_LEMMA`, therefore the first part of the demonstration of the completness theorem for GL is completely parametrized.
 ```
-COMPLETENESS_THEOREM 
+GL_COMPLETENESS_THM
 |- `!p. ITF:(form list->bool)#(form list->form list->bool)->bool |= p
        ==> [GL_AX . {} |~ p]`
 ```
+
 
 ### Finite model property and decidability
 

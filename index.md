@@ -19,7 +19,7 @@ This website gives a brief overview of our [HOLMS library](https://github.com/HO
 
 ## Contributors
 
-- Antonella Bilotta, University of Florence, Italy
+- [Antonella Bilotta](https://github.com/Antonella-Bilotta), University of Florence, Italy
 - [Marco Maggesi](https://sites.google.com/unifi.it/maggesi/), University of Florence, Italy
 - [Cosimo Perini Brogi](https://logicosimo-gitlab-io-logicosimo-ad8371f8e99a5e895c64ff5b4f9ba89.gitlab.io/), IMT School for Advanced Studies Lucca, Italy
 - Leonardo Quartini, University of Florence, Italy

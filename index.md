@@ -26,4 +26,4 @@ This website gives a brief overview of our [HOLMS library](https://github.com/HO
 
 
 ## HOLMS USAGE GUIDE
-The [README.md]([https://github.com/maggesi/GL/blob/master/README.md](https://github.com/HOLMS-lib/HOLMS/blob/main/README.md)) provides an usage guide for our HOLMS library at its current status.
+The [README.md](https://github.com/HOLMS-lib/HOLMS/blob/main/README.md) provides a usage guide for our HOLMS library at its current status.

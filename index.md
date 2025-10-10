@@ -30,7 +30,7 @@ This website gives a brief overview of our [HOLMS library](https://github.com/HO
   [WiL 2025](https://sites.google.com/view/wil2025/home) -  9th Women in Logic Workshop <br/>
   14 July, Birmingham (United Kingdom).<br/>
   Book of Abstract of Women in Logic 2025, pp. 7-11. <br/>
-  [Download](https://liveuclac-my.sharepoint.com/:b:/g/personal/ucacepi_ucl_ac_uk/EewYzhqOjRtGnxw2pPoTCywBoBN5G6LsKNm_DsxknEdiAQ?e=V8YYPC) (Open access)
+  [Download](https://liveuclac-my.sharepoint.com/:b:/g/personal/ucacepi_ucl_ac_uk/EdtzuTRYSm5DrdTU-XglSP8BZkR4N-x_KauVp2YiEsrqgg?e=IpzlMM) (Open access)
 - Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi (2025)<br/>
   ***A Modular Proof of Semantic Completeness for Normal Systems beyond the Modal Cube, Formalised in HOLMS.***.<br/>
   [ICTCS 2025](https://ictcs2025.unich.it/) - 26th Italian Conference on Theoretical Computer Science  <br/>

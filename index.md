@@ -79,5 +79,14 @@ This website gives a brief overview of our [HOLMS library](https://github.com/HO
 - Leonardo Quartini, University of Florence, Italy
 
 
-## HOLMS USAGE GUIDE
+## HOLMS Usage Guide
 The [README.md](https://github.com/HOLMS-lib/HOLMS/blob/main/README.md) provides a usage guide for our HOLMS library at its current status.
+
+
+## HOL Light Mini-Manual
+
+A 30-page **introductory guide for non-specialists**, taken from Chapter 2 of [Antonella Bilotta’s Master’s Thesis](https://arxiv.org/abs/2506.10048).  
+Useful for students, researchers, and contributors approaching **mechanisation in HOL Light** or in a **proof assistant** for the first time.
+
+[Read the Mini-Manual (PDF, arXiv)](https://arxiv.org/pdf/2506.10048.pdf#page=68)
+

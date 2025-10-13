@@ -26,7 +26,7 @@ This website gives a brief overview of our [HOLMS library](https://github.com/HO
 - Antonella Bilotta (2025)<br/>
   ***Growing a Modular Framework for Modal Systems- HOLMS: a HOL Light Library***.<br/>
   Master’s Thesis, Università degli Studi di Firenze, Firenze (Italy).<br/>
-  DOI arxiv: [2506.10048)](https://arxiv.org/abs/2506.10048) (Open access)
+  DOI arxiv: [2506.10048](https://arxiv.org/abs/2506.10048) (Open access)
   
 - Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi (2025)<br/>
   ***Growing a Modular Framework for Modal Systems: HOLMS.***.<br/>

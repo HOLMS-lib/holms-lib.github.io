@@ -21,12 +21,12 @@ This website gives a brief overview of our [HOLMS library](https://github.com/HO
   28 and 29 November, Bolzano (Italy).<br/>
   CEUR Workshop Proceedings, <br/>
   Volume 3904, pp. 41-48,  CEUR-WS.org (2024)<br/> 
-  [Download](https://ceur-ws.org/Vol-3904/paper5.pdf) (Open access)
+  DBLP:[pid/395/7262](https://ceur-ws.org/Vol-3904/paper5.pdf) (Open access)
   
 - Antonella Bilotta (2025)<br/>
   ***Growing a Modular Framework for Modal Systems- HOLMS: a HOL Light Library***.<br/>
   Master’s Thesis, Università degli Studi di Firenze, Firenze (Italy).<br/>
-  [Download (arXiv:2506.10048)](https://arxiv.org/abs/2506.10048) (Open access)
+  DOI arxiv: [2506.10048)](https://arxiv.org/abs/2506.10048) (Open access)
   
 - Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi (2025)<br/>
   ***Growing a Modular Framework for Modal Systems: HOLMS.***.<br/>

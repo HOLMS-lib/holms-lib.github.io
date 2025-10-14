@@ -46,7 +46,7 @@ This website gives a brief overview of our [HOLMS library](https://github.com/HO
 ## Talks & Presentations
 - **[OVERLAY 2024](https://overlay.uniud.it/workshop/2024/)** – 6th International Workshop on Intelligence and fOrmal VERification, Logic, Automata, and sYnthesis<br/> 
    28 and 29 November, Bolzano (Italy). <br/> 
-  [Slides (PDF)]()
+  [Slides (PDF)](https://drive.google.com/file/d/1ys7VisacuYD2raSEuDXXUtfF7lEJN5BH/view?usp=sharing)
 
 - **[WiL 2025](https://sites.google.com/view/wil2025/home)** – 9th Women in Logic Workshop <br/> 
   14 July, Birmingham (United Kingdom).  <br/> 

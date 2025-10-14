@@ -68,7 +68,7 @@ This website gives a brief overview of our [HOLMS library](https://github.com/HO
 | Reference                     | Modal Logics               |
 |-------------------------------|----------------------------|
 | **Journal of Automated Reasoning 63 (2023)**          | GL                         |
-| **OVERLAY 2024 (2023)**          | GL, K                      |
+| **OVERLAY 2024 (2024)**          | GL, K                      |
 | **Bilotta Master's Thesis (Spring 2025)** | GL, K, K4, T           |
 | **WiL 2025, ICTCS 2025 (Summer 2025)**  | GL, K, K4, T, S4, B, S5    |
 

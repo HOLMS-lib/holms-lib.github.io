@@ -65,12 +65,13 @@ This website gives a brief overview of our [HOLMS library](https://github.com/HO
 
 **Modal Logics Mechanised in HOLMS** (chronological):
 
-| Reference                     | Modal Logics               |
-|-------------------------------|----------------------------|
-| **Journal of Automated Reasoning 63 (2023)**          | GL                         |
-| **OVERLAY 2024 (2024)**          | GL, K                      |
-| **Bilotta Master's Thesis (Spring 2025)** | GL, K, K4, T           |
+| Reference                     | Modal Logics               | Other Improvements            |
+|-------------------------------|----------------------------|----------------------------|
+| **Journal of Automated Reasoning 63 (2023)**          | GL                         |                            |
+| **OVERLAY 2024 (2024)**          | GL, K                      |                            |
+| **Bilotta Master's Thesis (Spring 2025)** | GL, K, K4, T           | Modular Design ✓    |
 | **WiL 2025, ICTCS 2025 (Summer 2025)**  | GL, K, K4, T, S4, B, S5    |
+| **CSL 2026 (To appear in 2026)**  | GL, K, K4, T, S4, B, S5    | Certified Countermodels ✓    |
 
 ## Contributors
 

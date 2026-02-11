@@ -1,6 +1,6 @@
 # A HOL Light Library for Modal Systems
 
-This website gives a brief overview of our [HOLMS library](https://github.com/HOLMS-lib/HOLMS) for the [HOL Light](https://hol-light.github.io/) theorem prover.
+This website gives a brief overview of the [HOLMS library](https://github.com/HOLMS-lib/HOLMS), a modular framework for implementing modal reasoning within the [HOL Light](https://hol-light.github.io/) theorem prover.
 
 ## Publications
 

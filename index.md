@@ -22,8 +22,7 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
   CEUR Workshop Proceedings, <br/>
   Volume 3904, pp. 41-48,  CEUR-WS.org (2024)<br/> 
   DBLP:[conf/overlay/BilottaMBQ24](https://ceur-ws.org/Vol-3904/paper5.pdf) (Open access)
-  
-  
+
 - Antonella Bilotta (2025)<br/>
   ***Growing a Modular Framework for Modal Systems- HOLMS: a HOL Light Library***.<br/>
   Master’s Thesis, Università degli Studi di Firenze, Firenze (Italy).<br/>
@@ -43,6 +42,11 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
   CEUR Workshop Proceedings, <br/>
   Volume 4039, pp. 154-162,  CEUR-WS.org (2025)<br/> 
   DBLP:[conf/ictcs/BilottaMB25](https://ceur-ws.org/Vol-4039/paper10.pdf) (Open access)
+
+- Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi (2026)<br/>
+  ***A Modular Framework for Proof-Search via Formalised Modal Completeness in HOL Light.***.<br/>
+  In: Proceedings of the 34th EACSL Annual Conference on Computer Science Logic, Paris, France,<br/>
+  February 24-27, 2026 (2026), https://csl2026.github.io/accepted, in press
 
 ## Talks & Presentations
 - **[OVERLAY 2024](https://overlay.uniud.it/workshop/2024/)** – 6th International Workshop on Intelligence and fOrmal VERification, Logic, Automata, and sYnthesis<br/> 

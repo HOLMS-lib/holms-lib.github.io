@@ -46,7 +46,7 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
 
 - Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi (2026)<br/>
   ***A Modular Framework for Proof-Search via Formalised Modal Completeness in HOL Light.***.<br/>
-  In Proceedings of the 34th EACSL Annual Conference on Computer Science Logic (CSL 2026) <br/>
+  In Proceedings of the 34th EACSL Annual Conference on Computer Science Logic ([CSL 2026](https://csl2026.github.io/)) <br/>
   February 24-27, 2026, Paris (France). <br/>
   Leibniz International Proceedings in Informatics (LIPIcs) <br/>
   Volume 363, pp. 18:1--18:29, Schloss Dagstuhl – Leibniz-Zentrum für Informatik <br/>
@@ -79,7 +79,7 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
 | **OVERLAY 2024 (2024)**          | GL, K                      |                            |
 | **Bilotta Master's Thesis (Spring 2025)** | GL, K, K4, T           | Modular Design ✓    |
 | **WiL 2025, ICTCS 2025 (Summer 2025)**  | GL, K, K4, T, S4, B, S5    |
-| **CSL 2026 (To appear in 2026)**  | GL, K, K4, T, S4, B, S5    | Certified Countermodels ✓    |
+| **CSL 2026 (Winter 2026)**  | GL, K, K4, T, S4, B, S5    | Certified Countermodels ✓    |
 
 ## Contributors
 

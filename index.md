@@ -6,9 +6,10 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
 
 - Marco Maggesi, Cosimo Perini Brogi (2021)<br/>
   ***A Formal Proof of Modal Completeness for Provability Logic***.<br/>
-  In 12th International Conference on Interactive Theorem Proving ([ITP 2021](https://easyconferences.eu/itp2021/)).<br/>
-  Leibniz International Proceedings in Informatics (LIPIcs),<br/>
-  Volume 193, pp. 26:1-26:18, Schloss Dagstuhl – Leibniz-Zentrum für Informatik (2021)<br/>
+  In 12th International Conference on Interactive Theorem Proving ([ITP 2021](https://easyconferences.eu/itp2021/))<br/>
+  June 29- July 1, 2021, Rome (Italy). <br/>
+  Leibniz International Proceedings in Informatics (LIPIcs)<br/>
+  Volume 193, pp. 26:1-26:18, Schloss Dagstuhl – Leibniz-Zentrum für Informatik <br/>
   DOI:[10.4230/LIPIcs.ITP.2021.26](https://doi.org/10.4230/LIPIcs.ITP.2021.26) (Open access)
   
 - Marco Maggesi, Cosimo Perini Brogi (2023)<br/>
@@ -45,8 +46,11 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
 
 - Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi (2026)<br/>
   ***A Modular Framework for Proof-Search via Formalised Modal Completeness in HOL Light.***.<br/>
-  In: Proceedings of the 34th EACSL Annual Conference on Computer Science Logic, Paris, France,<br/>
-  February 24-27, 2026 (2026), https://csl2026.github.io/accepted, in press
+  In Proceedings of the 34th EACSL Annual Conference on Computer Science Logic (CSL 2026) <br/>
+  February 24-27, 2026, Paris (France). <br/>
+  Leibniz International Proceedings in Informatics (LIPIcs) <br/>
+  Volume 363, pp. 18:1--18:29, Schloss Dagstuhl – Leibniz-Zentrum für Informatik <br/>
+  DOI:[10.4230/LIPIcs.CSL.2026.18](https://doi.org/10.4230/LIPIcs.CSL.2026.18) (Open access)
 
 ## Talks & Presentations
 - **[OVERLAY 2024](https://overlay.uniud.it/workshop/2024/)** – 6th International Workshop on Intelligence and fOrmal VERification, Logic, Automata, and sYnthesis<br/> 

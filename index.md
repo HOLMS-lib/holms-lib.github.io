@@ -69,7 +69,7 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
    September 15-19,  Herrsching am Ammersee (Deutschland). <br/>
   [Slides (PDF)](https://drive.google.com/file/d/1zW_XKooRUQB4VSnLRZtj7O4OL32e6L3U/view)
 
-  - **[CSL 2026]([https://www.mathematik.uni-muenchen.de/~schwicht/pc25.php](https://csl2026.github.io/))**  - 34th EACSL Annual Conference on Computer Science Logic <br/>
+- **[CSL 2026](https://csl2026.github.io/)**  - 34th EACSL Annual Conference on Computer Science Logic <br/>
    February 24-27,  Paris (France). <br/>
   [Slides (PDF)](https://drive.google.com/file/d/12L8oe1LonptZKfiGQ7b3pTBnPuxGKG6V/view?usp=sharing)
 

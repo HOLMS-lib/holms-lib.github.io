@@ -71,7 +71,7 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
 
 - **[CSL 2026](https://csl2026.github.io/)**  - 34th EACSL Annual Conference on Computer Science Logic <br/>
    February 24-27,  Paris (France). <br/>
-  [Slides (PDF)](https://drive.google.com/file/d/12L8oe1LonptZKfiGQ7b3pTBnPuxGKG6V/view?usp=sharing)
+  [Slides (PDF)](https://drive.google.com/file/d/1rhXzJmxNPSmFaF4Mx4EsJ0wrIkuc0Ntx/view?usp=sharing)
 
 ## Evolution of HOLMS
 

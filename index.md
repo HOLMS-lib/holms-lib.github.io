@@ -71,19 +71,20 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
 
 - **[CSL 2026](https://csl2026.github.io/)**  - 34th EACSL Annual Conference on Computer Science Logic <br/>
    February 24-27,  Paris (France). <br/>
-  [Slides (PDF)](https://drive.google.com/file/d/1rhXzJmxNPSmFaF4Mx4EsJ0wrIkuc0Ntx/view?usp=sharing)
+  [Slides (PDF)](https://drive.google.com/file/d/1RnNgdZQGUx0oBK40Y4-G_w-lDC_ALxwC/view?usp=sharing)
 
 ## Evolution of HOLMS
 
 **Modal Logics Mechanised in HOLMS** (chronological):
 
-| Reference                     | Modal Logics               | Other Improvements            |
-|-------------------------------|----------------------------|----------------------------|
-| **Journal of Automated Reasoning 63 (2023)**          | GL                         |                            |
-| **OVERLAY 2024 (2024)**          | GL, K                      |                            |
-| **Bilotta Master's Thesis (Spring 2025)** | GL, K, K4, T           | Modular Design ✓    |
-| **WiL 2025, ICTCS 2025 (Summer 2025)**  | GL, K, K4, T, S4, B, S5    |
-| **CSL 2026 (Winter 2026)**  | GL, K, K4, T, S4, B, S5    | Certified Countermodels ✓    |
+| Reference                     | Modal Logics               | Other Improvements            | Observations |
+|-------------------------------|----------------------------|----------------------------| ----------------------------|
+| **Journal of Automated Reasoning 63 (2023)**          | GL                         |                            | |
+| **OVERLAY 2024 (2024)**          | GL, K                      |                            | |
+| **Bilotta Master's Thesis (Spring 2025)** | GL, K, K4, T           | Modular Design ✓    | |
+| **WiL 2025, ICTCS 2025 (Summer 2025)**  | GL, K, K4, T, S4, B, S5    | |
+| **CSL 2026 (Winter 2026)**  | GL, K, K4, T, S4, B, S5    | Certified Countermodels ✓    | Semidecision for K4, S4, S5 |
+| **Last Developments**  | GL, K, K4, T, S4, B, S5, Grz    |   |  |
 
 ## Contributors
 

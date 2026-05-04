@@ -23,18 +23,18 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
   CEUR Workshop Proceedings, <br/>
   Volume 3904, pp. 41-48,  CEUR-WS.org (2024)<br/> 
   DBLP:[conf/overlay/BilottaMBQ24](https://ceur-ws.org/Vol-3904/paper5.pdf) (Open access)
-
+ 
 - Antonella Bilotta (2025)<br/>
   ***Growing a Modular Framework for Modal Systems- HOLMS: a HOL Light Library***.<br/>
   Master’s Thesis, Università degli Studi di Firenze, Firenze (Italy).<br/>
   DOI arxiv: [2506.10048](https://arxiv.org/abs/2506.10048) (Open access)
   
-- Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi (2025)<br/>
+<!-- - Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi (2025)<br/>
   ***Growing a Modular Framework for Modal Systems: HOLMS.***.<br/>
   In 9th Women in Logic Workshop ([WiL 2025](https://sites.google.com/view/wil2025/home)) <br/>
   14 July, Birmingham (United Kingdom).<br/>
   Book of Abstract of Women in Logic 2025, pp. 7-11. <br/>
-  [Download](https://liveuclac-my.sharepoint.com/:b:/g/personal/ucacepi_ucl_ac_uk/EdtzuTRYSm5DrdTU-XglSP8BZkR4N-x_KauVp2YiEsrqgg?e=IpzlMM) (Open access)
+  [Download](https://liveuclac-my.sharepoint.com/:b:/g/personal/ucacepi_ucl_ac_uk/EdtzuTRYSm5DrdTU-XglSP8BZkR4N-x_KauVp2YiEsrqgg?e=IpzlMM) (Open access) -->
   
 - Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi (2025)<br/>
   ***A Modular Proof of Semantic Completeness for Normal Systems beyond the Modal Cube, Formalised in HOLMS.***.<br/>
@@ -45,12 +45,16 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
   DBLP:[conf/ictcs/BilottaMB25](https://ceur-ws.org/Vol-4039/paper10.pdf) (Open access)
 
 - Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi (2026)<br/>
-  ***A Modular Framework for Proof-Search via Formalised Modal Completeness in HOL Light.***.<br/>
+  ***A Modular Framework for Proof-Search via Formalised Modal Completeness in HOL Light.*** <br/>
   In Proceedings of the 34th EACSL Annual Conference on Computer Science Logic ([CSL 2026](https://csl2026.github.io/)) <br/>
   February 24-27, 2026, Paris (France). <br/>
   Leibniz International Proceedings in Informatics (LIPIcs) <br/>
   Volume 363, pp. 18:1--18:29, Schloss Dagstuhl – Leibniz-Zentrum für Informatik <br/>
   DOI:[10.4230/LIPIcs.CSL.2026.18](https://doi.org/10.4230/LIPIcs.CSL.2026.18) (Open access)
+
+  <!-- - Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi (2026, to appear)<br/>
+  ***Growing HOLMS: A Verified Automated Prover for Grzegorczyk Logic in HOL Light.***.<br/>
+  In Proceedings of the International Joint Conference on Automated Reasoning ([IJCAR 2026](https://www.floc26.org/ijcar))<br/> -->
 
 ## Talks & Presentations
 - **[OVERLAY 2024](https://overlay.uniud.it/workshop/2024/)** – 6th International Workshop on Intelligence and fOrmal VERification, Logic, Automata, and sYnthesis<br/> 
@@ -59,7 +63,7 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
 
 - **[WiL 2025](https://sites.google.com/view/wil2025/home)** – 9th Women in Logic Workshop <br/> 
   14 July, Birmingham (United Kingdom).  <br/> 
-  [Slides (PDF)](https://drive.google.com/file/d/1IU-zT0WePrNoYwhJFGfrahLi9APRbBOj/view)
+  [Slides (PDF)](https://drive.google.com/file/d/1IU-zT0WePrNoYwhJFGfrahLi9APRbBOj/view) & [Abstract (PDF)](https://liveuclac-my.sharepoint.com/:b:/g/personal/ucacepi_ucl_ac_uk/EdtzuTRYSm5DrdTU-XglSP8BZkR4N-x_KauVp2YiEsrqgg?e=IpzlMM)
 
 - **[ICTCS 2025](https://ictcs2025.unich.it/)** – 26th Italian Conference on Theoretical Computer Science  <br/>
    September 10-12, Pescara (Italy).<br/>
@@ -78,13 +82,14 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
 **Modal Logics Mechanised in HOLMS** (chronological):
 
 | Reference                     | Modal Logics               | Other Improvements            | Observations |
-|-------------------------------|----------------------------|----------------------------| ----------------------------|
-| **Journal of Automated Reasoning 63 (2023)**          | GL                         |                            | |
-| **OVERLAY 2024 (2024)**          | GL, K                      |                            | |
-| **Bilotta Master's Thesis (Spring 2025)** | GL, K, K4, T           | Modular Design ✓    | |
-| **WiL 2025, ICTCS 2025 (Summer 2025)**  | GL, K, K4, T, S4, B, S5    | |
-| **CSL 2026 (Winter 2026)**  | GL, K, K4, T, S4, B, S5    | Certified Countermodels ✓    | Semidecision for K4, S4, S5 |
-| **Last Developments**  | GL, K, K4, T, S4, B, S5, Grz    |   |  |
+|-------------------------------|----------------------------| :---:| :---:|
+| **Journal of Automated Reasoning 63 2023**          | GL                         |                            | |
+| **OVERLAY 2024**          | GL, K                      |                            | |
+| **Bilotta Master's Thesis** | GL, K, K4, T           | Modular Design ✓    | Semidecision for K4|
+| **WiL 2025, ICTCS 2025, CSL 2026**  | GL, K, K4, T, S4, B, S5    |  Certified Countermodels ✓  | Semidecision for K4, S4, S5 |
+| **IJCAR 2026** (to appear)  | GL, K, K4, T, S4, B, S5, Grz    | Modal Translation ✓  | " | 
+| **Last Developments**  | GL, K, K4, T, S4, B, S5, Grz, D    |   | " |
+
 
 ## Contributors
 

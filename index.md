@@ -84,7 +84,7 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
    February 24-27,  Paris (France). <br/>
   [Slides (PDF)](https://drive.google.com/file/d/1RnNgdZQGUx0oBK40Y4-G_w-lDC_ALxwC/view?usp=sharing)
 
-  - **[PACM∧N 2026](https://pacman.logicverona.it/2026.html)**  - Proof, Argumentation, Computation, Modalities And Negation <br/>
+- **[PACM∧N 2026](https://pacman.logicverona.it/2026.html)**  - Proof, Argumentation, Computation, Modalities And Negation <br/>
    June 10-12,  Verona (Italy). <br/>
   [Slides (PDF)](https://drive.google.com/file/d/1eeF1az9vrHQMNwrgZF1rIce3-q0M8Rm2/view?usp=sharing)
 

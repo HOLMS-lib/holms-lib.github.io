@@ -84,6 +84,10 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
    February 24-27,  Paris (France). <br/>
   [Slides (PDF)](https://drive.google.com/file/d/1RnNgdZQGUx0oBK40Y4-G_w-lDC_ALxwC/view?usp=sharing)
 
+  - **[PACM∧N 2026](https://pacman.logicverona.it/2026.html)**  - Proof, Argumentation, Computation, Modalities And Negation <br/>
+   June 10-12,  Verona (Italy). <br/>
+  [Slides (PDF)](https://drive.google.com/file/d/1eeF1az9vrHQMNwrgZF1rIce3-q0M8Rm2/view?usp=sharing)
+
 ## Evolution of HOLMS
 
 **Modal Logics Mechanised in HOLMS** (chronological):
@@ -95,7 +99,7 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
 | **Bilotta Master's Thesis** | GL, K, K4, T           | Modular Design ✓    | Semidecision for K4|
 | **WiL 2025, ICTCS 2025, CSL 2026**  | GL, K, K4, T, S4, B, S5    |  Certified Countermodels ✓  | Semidecision for K4, S4, S5 |
 | **IJCAR 2026, WiL 2026** (to appear)  | GL, K, K4, T, S4, B, S5, Grz    | Modal Translation ✓  | Non-Modular Completeness Proof for Grz  | 
-| **Last Developments**  | GL, K, K4, T, S4, B, S5, Grz, D    | Modular Completeness for Grz ✓ |  |
+| **Last Developments**  | GL, K,  K4, T, S4, KB, B, S5, Grz, D    | Modular Completeness for Grz ✓ |  |
 
 
 ## Contributors

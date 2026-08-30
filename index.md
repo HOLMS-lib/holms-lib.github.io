@@ -57,10 +57,11 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
   In 10th Women in Logic Workshop ([WiL 2026](https://womeninlogic.org/workshops/2026/)) <br/>
   July 24-25, 2026, Lisbon (Portugal). (Extended Abstract)
  
- - Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi (2026, to appear)<br/>
+ - Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi (2026)<br/>
   ***Growing HOLMS: A Verified Automated Prover for Grzegorczyk Logic in HOL Light.*** <br/>
-  In Proceedings of the International Joint Conference on Automated Reasoning ([IJCAR 2026](https://www.floc26.org/ijcar))<br/>
-  July 26-29, 2026, Lisbon (Portugal).
+  In: Biere, Lutz, Negri, (eds) Automated Reasoning. [IJCAR 2026](https://www.floc26.org/ijcar). Lecture Notes in Computer Science <br/>
+  Volume 16688, pp. 414-435, Springer, Cham <br/>
+  DOI: [10.1007/978-3-032-32589-1_25](https://doi.org/10.1007/978-3-032-32589-1_25)
 
 
 ## Talks & Presentations
@@ -69,7 +70,7 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
   [Slides (PDF)](https://drive.google.com/file/d/1ys7VisacuYD2raSEuDXXUtfF7lEJN5BH/view?usp=sharing)
 
 - **[WiL 2025](https://sites.google.com/view/wil2025/home)** – 9th Women in Logic Workshop <br/> 
-  14 July, Birmingham (United Kingdom).  <br/> 
+  July 14, Birmingham (United Kingdom).  <br/> 
   [Slides (PDF)](https://drive.google.com/file/d/1IU-zT0WePrNoYwhJFGfrahLi9APRbBOj/view) & [Abstract (PDF)](https://liveuclac-my.sharepoint.com/:b:/g/personal/ucacepi_ucl_ac_uk/EdtzuTRYSm5DrdTU-XglSP8BZkR4N-x_KauVp2YiEsrqgg?e=IpzlMM)
 
 - **[ICTCS 2025](https://ictcs2025.unich.it/)** – 26th Italian Conference on Theoretical Computer Science  <br/>
@@ -87,6 +88,14 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
 - **[PACM∧N 2026](https://pacman.logicverona.it/2026.html)**  - Proof, Argumentation, Computation, Modalities And Negation <br/>
    June 10-12,  Verona (Italy). <br/>
   [Slides (PDF)](https://drive.google.com/file/d/1eeF1az9vrHQMNwrgZF1rIce3-q0M8Rm2/view?usp=sharing)
+
+ - **[WiL 2026](https://womeninlogic.org/workshops/2026/)** – 10th Women in Logic Workshop <br/> 
+  July 24-25 , Lisboa (Portugal).  <br/> 
+  [Slides (PDF)](https://drive.google.com/file/d/1pFa1gygVVJpuRBxdB6HNedZGsPevZa27/view?usp=sharing) & [Abstract (PDF)](https://drive.google.com/file/d/1pshKxvEb9FkH9AttcAwu3cfULkXepdOM/view)
+
+- **[IJCAR 2026](https://www.floc26.org/ijcar)**  - International Joint Conference on Automated Reasoning <br/>
+   July 26-29,  Lisboa (Portugal). <br/>
+  [Slides (PDF)](https://drive.google.com/file/d/1UPVQ8hhVWdmQU9W-FXbJ110GL98RDn2-/view?usp=drive_link)
 
 ## Evolution of HOLMS
 

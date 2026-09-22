@@ -52,7 +52,7 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
   Volume 363, pp. 18:1--18:29, Schloss Dagstuhl – Leibniz-Zentrum für Informatik <br/>
   DOI:[10.4230/LIPIcs.CSL.2026.18](https://doi.org/10.4230/LIPIcs.CSL.2026.18) (Open access)
 
- - Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi (2026, to appear)<br/>
+ - Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi (2026)<br/>
   ***Growing HOLMS: Grzegorczyk Logic and Experiments with Translations in HOL Light.*** <br/>
   In 10th Women in Logic Workshop ([WiL 2026](https://womeninlogic.org/workshops/2026/)) <br/>
   July 24-25, 2026, Lisbon (Portugal). (Extended Abstract)
@@ -107,7 +107,7 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
 | **OVERLAY 2024**          | GL, K                      |                            | |
 | **Bilotta Master's Thesis** | GL, K, K4, T           | Modular Design ✓    | Semidecision for K4|
 | **WiL 2025, ICTCS 2025, CSL 2026**  | GL, K, K4, T, S4, B, S5    |  Certified Countermodels ✓  | Semidecision for K4, S4, S5 |
-| **IJCAR 2026, WiL 2026** (to appear)  | GL, K, K4, T, S4, B, S5, Grz    | Modal Translation ✓  | Non-Modular Completeness Proof for Grz  | 
+| **IJCAR 2026, WiL 2026** | GL, K, K4, T, S4, B, S5, Grz    | Modal Translation ✓  | Non-Modular Completeness Proof for Grz  | 
 | **Last Developments**  | GL, K,  K4, T, S4, KB, B, S5, Grz, D    | Modular Completeness for Grz ✓ |  |
 
 

@@ -55,7 +55,9 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
  - Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi (2026)<br/>
   ***Growing HOLMS: Grzegorczyk Logic and Experiments with Translations in HOL Light.*** <br/>
   In 10th Women in Logic Workshop ([WiL 2026](https://womeninlogic.org/workshops/2026/)) <br/>
-  July 24-25, 2026, Lisbon (Portugal). (Extended Abstract)
+  July 24-25, 2026, Lisbon (Portugal). 
+  Book of Abstract of Women in Logic 2025, pp. 16-20. <br/>
+  [Extended Abstract, Download](https://liveuclac-my.sharepoint.com/:b:/g/personal/ucacepi_ucl_ac_uk/EdtzuTRYSm5DrdTU-XglSP8BZkR4N-x_KauVp2YiEsrqgg?e=IpzlMM) (Open access)
  
  - Antonella Bilotta, Marco Maggesi, Cosimo Perini Brogi (2026)<br/>
   ***Growing HOLMS: A Verified Automated Prover for Grzegorczyk Logic in HOL Light.*** <br/>

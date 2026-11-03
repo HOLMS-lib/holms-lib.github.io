@@ -110,7 +110,7 @@ This website gives a brief overview of the [HOLMS library](https://github.com/HO
 | **Bilotta Master's Thesis** | GL, K, K4, T           | Modular Design ✓    | Semidecision for K4|
 | **WiL 2025, ICTCS 2025, CSL 2026**  | GL, K, K4, T, S4, B, S5    |  Certified Countermodels ✓  | Semidecision for K4, S4, S5 |
 | **IJCAR 2026, WiL 2026** | GL, K, K4, T, S4, B, S5, Grz    | Modal Translation ✓  | Non-Modular Completeness Proof for Grz  | 
-| **Last Developments**  | GL, K,  K4, T, S4, KB, B, S5, Grz, D    | Modular Completeness for Grz ✓ |  |
+| **Last Developments**  | GL, K,  K4, T, S4, KB, B, S5, Grz, D    | Modular Completeness for Grz, D and all the systems  ✓ |  |
 
 
 ## Contributors
